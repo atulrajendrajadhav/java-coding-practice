@@ -1,0 +1,47 @@
+// 2.  Write a program to print days  case 1: Monday case2: tuesda……case 7:sunday default: invalid 
+import java.util.Scanner;
+public class PrintDays {
+    public static void main (String Args [] ){
+        Scanner obj = new Scanner (System.in);
+        System.out.println("Enter the choice");
+        int choice = obj.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.println("Monday");
+                break;
+
+            case 2:
+                System.out.println("Tuesday");
+                break;
+
+            case 3:
+                System.out.println("Wednesday");
+                break;
+
+            case 4:
+                System.out.println("Thursday");
+                break;
+
+            case 5:
+                System.out.println("Friday");
+                break;
+
+            case 6:
+                System.out.println("Saturday");
+                break;
+
+            case 7:
+                System.out.println("Sunday");
+                break;
+        
+            default:
+                System.out.println("Invalid");
+                break;
+        }
+
+        obj.close();
+
+    }
+    
+}
