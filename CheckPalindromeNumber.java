@@ -1,28 +1,27 @@
-// Check Palindrome Number.
 import java.util.Scanner;
 public class CheckPalindromeNumber {
-    public static void main(String[]args){
-        Scanner sc = new Scanner(System.in);
+    public static void main (String [] Args){
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Enter the number N: ");
+        int num = sc.nextInt();
+        int origenalNumber = num;
+        int temp =0;
+        int reverse =0;
 
-        System.out.println("Enter the number: ");
-        int num =sc.nextInt();
-        int temp = num;
-        int lastDigit =0;
-        int rev = 0;
+        for (; num!=0; num/=10){
+            temp = num%10;
 
-
-        for( ; num!=0; num/=10){
-            lastDigit = num%10;
-            rev = rev*10+lastDigit;
+            reverse = reverse*10+temp;
+            //System.out.println(reverse);
         }
-        System.out.println("rev :"+rev);
-        if(rev==temp){
-            System.out.println("It is an Pallindrome");
-        }else
-            System.out.println("not pallindrome");
-    
+        //System.out.println(reverse);
+
+        if(origenalNumber == reverse){
+            System.out.println(origenalNumber+ " This number is Palindrome Number");
+        }
+        else
+            System.out.println(origenalNumber+" This number is not  palindrome Number");
+
         sc.close();
     }
-
-
 }
