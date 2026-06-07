@@ -1,27 +1,32 @@
+// Find sum of digits
+
 import java.util.Scanner;
-public class CheckPalindromeNumber {
-    public static void main (String [] Args){
-        Scanner sc = new Scanner (System.in);
-        System.out.println("Enter the number N: ");
-        int num = sc.nextInt();
-        int origenalNumber = num;
-        int temp =0;
-        int reverse =0;
 
-        for (; num!=0; num/=10){
+class CheckPalindromeNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+         int num = sc.nextInt();
+
+         int originalNumber = num;
+         int temp =0;
+         int ReverseANumber = 0;
+
+
+         while (num>0) {
             temp = num%10;
+            num = num/10;
+           //System.out.println(temp);
 
-            reverse = reverse*10+temp;
-            //System.out.println(reverse);
-        }
-        //System.out.println(reverse);
-
-        if(origenalNumber == reverse){
-            System.out.println(origenalNumber+ " This number is Palindrome Number");
-        }
-        else
-            System.out.println(origenalNumber+" This number is not  palindrome Number");
-
+           ReverseANumber =ReverseANumber*10+temp;
+         }
+         if (originalNumber == ReverseANumber) {
+            System.out.println("Given number is Palindrome because Origanl num "+originalNumber+" = "+" revese num "+ReverseANumber);
+         }
+         else
+            System.out.println("Given num "+originalNumber+" is not palindrome ");
         sc.close();
     }
+
 }
+    
