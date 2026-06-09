@@ -1,26 +1,32 @@
 import java.util.Scanner;
+
 public class CheckPerfectNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the Number: ");
         int num = sc.nextInt();
-        int origenalNumber = num;
-        int count = 0;
+        int originalNumber = num;
+        int sum = 0;
 
-        for(int i=1; i<num; i++){
-            
-            if (num%i == 0) {
-               //System.out.println(i);
-               count +=i;
+        int i = 0;
+        while (i < num/2) {
+            // System.out.println(i);
+            i++;
+
+            if (num % i == 0) {
+                //System.out.println(i);
+                sum+=i;
             }
+            
         }
-        if (origenalNumber == count) {
-            System.out.println(origenalNumber+" This is a Perfect Number becuase original Number "+origenalNumber+" == Divisor sum  "+count);
-        }
-        else
-            System.out.println(origenalNumber+" This is not perfect number");
+         System.out.println(sum);
+
+        if (originalNumber == sum) {
+            System.out.println("Given num " + originalNumber + " is Perfect Number");
+        } else
+            System.out.println("Given num " + originalNumber + " is not Perfect Number");
+
         sc.close();
     }
-    
 }
