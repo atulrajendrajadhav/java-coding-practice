@@ -1,9 +1,20 @@
-// 14)Convert Celsius to Fahrenheit
-class CelsiusToFahrenheit{
-	public static void main ( String [] args ){
-	int c = 25;
-	float f = ((9/5) * 25) +32 ;    //F = (9/5 * C) + 32
-	System.out.println("output: "+ f);
-	}
-}
+import java.util.Scanner;
 
+public class CelsiusToFahrenheit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the celsius: ");
+
+        int celsius = sc.nextInt();
+
+        double fahrenheit = celsiusToFahrenheit(celsius);
+        System.out.println("Fahrenheit is : "+fahrenheit+"F");
+        sc.close();
+    }
+    public static double celsiusToFahrenheit(double celsius){
+        // (0°C × 9/5) + 32 = 32°F
+
+        double fahrenheit  =  (celsius*(9/5)+32);
+        return fahrenheit;
+    }
+}

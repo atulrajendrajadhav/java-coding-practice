@@ -2,25 +2,31 @@ import java.util.Scanner;
 
 public class CheckPrimeNumber {
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int num = sc.nextInt();
 
-        int num =  sc.nextInt();
-        int count = 0;
-
-        int i = 0;
-        while (i<num) {
-            //System.out.println(i);
-            i++;
-
-            if (num%i==0) {
-                count ++;
-            }
-        }
-        if (count == 2) {
-            System.out.println("Given num "+num+" is Prime Number");
+        if (isPrime(num)) {
+            System.out.println("Given number is Prime: "+num);
         }
         else
-            System.out.println("Given num "+num+" is not Prime Number");
+            System.out.println("Given number is not Prime : "+num);
+
         sc.close();
+        
+    }
+
+    public static boolean isPrime(int num){
+        if(num<=1){
+            return false;
+        }
+
+        for(int i=2; i<num; i++){
+            if(num%i==0)
+                return false;
+        }
+
+        return true;
+
     }
 }
