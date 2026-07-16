@@ -1,19 +1,21 @@
-// Find the factorial of a number
+// 9. Calculate and print the factorial of a given number.
+
 import java.util.Scanner;
+
 public class FactorialOfGivenNum {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the number");
+        System.out.println("Enter the number: ");
         int num = sc.nextInt();
-        int res =1;
 
-        for(int i=1; i<=num; i++){
-            res = res*i;
+        int factorial = 1;
+        int i = 1;
+        while (i <= num) {
+            factorial = factorial * i; 
+            i++;
         }
-        System.out.println(num+ " Factorial is: "+res);
-
+        System.out.println("Factorial of given num "+num+" is "+factorial);
         sc.close();
-    } 
-    
+        
+    }
 }

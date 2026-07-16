@@ -1,13 +1,17 @@
-// Print Multiplication Table of a Number
-import java.util.Scanner;
-class MultiplicationTable {
-    public static void main (String [] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number table");
-        int num =sc.nextInt();
+// 5. Print the multiplication table of a given number from n × 1 to n × 10.
 
-        for(int i=1; i<=10; i++){
-            System.out.println(i+" X "+num+" = "+ num*i);
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Number: ");
+        int num = sc.nextInt();
+
+        int i = 1;
+        while(i<=10){
+            System.out.println(i+" X "+num+" = "+num*i);
+            i ++;
         }
         sc.close();
     }
