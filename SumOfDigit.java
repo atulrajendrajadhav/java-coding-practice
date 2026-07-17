@@ -1,20 +1,24 @@
+// 14. Find and print the sum of digits of the given number. 
+
 import java.util.Scanner;
+
 public class SumOfDigit {
-    public static void main(String[] args) {
+    public static void main ( String [] args){
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the Number: ");
+        System.out.println("Enter the number: ");
         int num = sc.nextInt();
-        int res = 0;
-        int temp = 0;
+        int digit = 0;
+        int count = 0;
 
-        for (; num!=0; num/=10){
-            res = num%10;
-
-            System.out.println(res);
-            temp +=res;
+        while(num != 0){
+            digit = num;
+            //System.out.println(num);
+            num /= 10;
+            digit %= 10;
+            System.out.println(digit);
+            count = count + digit;
         }
-        System.out.println("Sum of total given num is: "+temp);
+        System.out.println("Sum of all Given digit is "+count);
         sc.close();
     }
 }

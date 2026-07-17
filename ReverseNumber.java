@@ -1,26 +1,25 @@
-// Create a method that returns the reverse of a number.
-
+// 12.  Reverse the given number and print the reversed value.
 import java.util.Scanner;
 
 public class ReverseNumber {
-    public static void main(String[] args) {
+    public static void main (String [] A){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number: ");
+        System.out.print("Enter the number: ");
         int num = sc.nextInt();
-        int Reverse = reverseNumber(num);
-        System.out.println(Reverse);
-        sc.close();
-    }
-    public static int reverseNumber(int num){
-         int rev = 0;
-        for(; num!=0; num/=10 ){
-            int temp = 0;
-    
-            temp = num%10;
-            rev = (rev*10)+temp;
+        int reverse = 0;
+        int temp = 1;
+
+        while(num != 0){
+             temp = num;
+           // System.out.println(num);
+            num /= 10;
+            temp %= 10;
             //System.out.println(temp);
-            
+            reverse = (reverse*10)+temp;
+            //System.out.println(reverse);
         }
-        return rev;
+        System.out.println(reverse);
+    
+        sc.close();
     }
 }
