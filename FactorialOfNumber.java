@@ -1,18 +1,18 @@
+//9. Calculate and print the factorial of the given number. 
 import java.util.Scanner;
-class FactorialOfNumber {
-    public static void main (String [] Args){
-        Scanner obj = new Scanner(System.in);
-        System.out.println("Enter the number");
-        int num = obj.nextInt();
 
-        int res = 1;
-
-        for(int i=num; i>0; i-- ){
-            System.out.println(i);
-            res = res*i;
-        
-        }
-        System.out.println(res);
-        obj.close();
+public class FactorialOfNumber {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the number ");
+        int num = sc.nextInt();
+        int i = 1;
+        int factorial = 1;
+        do{
+            factorial = factorial*i;
+            i++;
+        }while(i<=num);
+        System.out.println("Factorial of given number "+num+" is: "+factorial);
+        sc.close();
     }
 }

@@ -1,33 +1,35 @@
-// 15.  Check whether the given number is an Armstrong number.
+// 8. Check whether the given number is an Armstrong number. 
 
 import java.util.Scanner;
 
 public class ArmstrongNumber {
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
-
-        System.out.println("Enter the number : ");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number ");
         int num = sc.nextInt();
-        int origenalNumber = num;
-        int temp =0;
+        int originalNum = num;
+        int digit = 0;
+        int count = 0;
         int res = 0;
-        int finalRes =0;
 
-        for (; num!=0; num/=10){
-            temp = num%10;
+        do{
+            digit = num;
+            num/=10;
+            digit%=10;
+            //System.out.println(digit);
+            count = digit*digit*digit;
+            res += count;
 
-            res = temp*temp*temp;
-            //System.out.println(res);
-            finalRes += res;
-        }
-        //System.out.println(finalRes);
+        }while(num != 0);
+        //System.out.println(count);
+        //System.out.println(res);
 
-        if (origenalNumber == finalRes) {
-            System.out.println(origenalNumber+" This number is Armstong number");
+        if (originalNum == res) {
+            System.out.println("Given number is armstrong number: "+originalNum+" = "+res);
         }
         else
-            System.out.println(origenalNumber+" This is not Amstriong number ");
+            System.out.println("Given number is Not armstrong number: "+originalNum+" = "+res);
         sc.close();
-    }
 
+    }
 }
